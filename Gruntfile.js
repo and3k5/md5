@@ -32,9 +32,23 @@ module.exports = function(grunt) {
       }
     },
     jasmine : {
-      src : 'src/**/*.js',
-      options : {
-        specs : 'test/spec/**/*.js'
+      before : {
+        src : 'src/**/*.js',
+        options : {
+          specs : 'test/spec/**/*.js'
+        }
+      },
+      after : {
+        src : 'bin/<%= pkg.name %>.js',
+        options : {
+          specs : 'test/spec/**/*.js'
+        }
+      },
+      after_min : {
+        src : 'bin/<%= pkg.name %>.min.js',
+        options : {
+          specs : 'test/spec/**/*.js'
+        }
       }
     }
   });
@@ -43,10 +57,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
-    
-
+  
   grunt.registerTask('default', ['jshint','jasmine']);
   
-  grunt.registerTask('build', ['jshint','jasmine','concat','uglify']);
+  grunt.registerTask('build', ['jshint','jasmine:before','concat','uglify','jasmine:after','jasmine:after_min']);
 
 };
