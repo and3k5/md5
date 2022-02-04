@@ -4,8 +4,10 @@
   "description": "A md5 implementation in javascript",
   "author": "Anders Kjeldsen <and3k5@users.noreply.github.com>",
   "license": "MIT",
+  "main": "./dist/main.js",
   "scripts": {
-    "build": "grunt"
+    "build": "webpack --mode=production",
+    "dev": "webpack --mode=development"
   },
   "repository": {
     "type": "git",
@@ -20,10 +22,8 @@
     "hash"
   ],
   "devDependencies": {
-    "grunt": "^1.4.1",
-    "grunt-contrib-concat": "^0.5.1",
-    "grunt-contrib-jasmine": "^3.0.0",
-    "grunt-contrib-jshint": "^0.11.1",
-    "grunt-contrib-uglify": "^5.0.1"
+    "jasmine": "^4.0.2",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
   }
 }
