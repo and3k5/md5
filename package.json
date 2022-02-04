@@ -1,7 +1,7 @@
 {
   "name": "md5",
   "version": "0.0.1",
-  "description": "Super slim tiny multifuncional smartass md5 function in javascript",
+  "description": "A md5 implementation in javascript",
   "author": "Anders Kjeldsen <and3k5@users.noreply.github.com>",
   "license": "MIT",
   "repository": {
